@@ -89,6 +89,15 @@ python scripts/seed.py       # 5 keys + translations
 python scripts/seed_100.py   # 100+ keys with FR/ES/DE translations
 ```
 
+### Running without MongoDB
+
+If MongoDB is unavailable, the API automatically falls back to an **in-memory mock database** so the UI works immediately:
+
+- **Auto-fallback:** If `MONGODB_URI` is unreachable, the API uses mock data.
+- **Force mock:** Set `USE_MOCK_DB=true` in `.env` to always use mock (no MongoDB needed).
+- **Mock data:** 3 sample keys (Welcome, Login, Hello World) with FR/ES/DE translations.
+- **Health check:** `GET /api/health` returns `"database": "mock"` or `"mongodb"`.
+
 ---
 
 ## UI Screens (7 tabs)

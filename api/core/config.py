@@ -7,6 +7,8 @@ class Settings(BaseSettings):
     database_name: str = "translate"
     api_host: str = "0.0.0.0"
     api_port: int = 8000
+    use_mock_db: bool = False  # Set USE_MOCK_DB=true to force in-memory mock
+    use_mock_db: bool = False  # Set USE_MOCK_DB=true to force in-memory mock
 
     class Config:
         env_file = ".env"

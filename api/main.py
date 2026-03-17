@@ -4,12 +4,14 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from api.core.database import close_db
+from api.core.database import close_db, get_db, is_using_mock
 from api.modules import register_modules
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    # Initialize DB at startup (establishes MongoDB or mock)
+    await get_db()
     yield
     await close_db()
 
@@ -36,4 +38,4 @@ register_modules(app)
 @app.get("/api/health")
 async def health():
     """Health check."""
-    return {"status": "ok"}
+    return {"status": "ok", "database": "mock" if is_using_mock() else "mongodb"}
