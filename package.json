@@ -1,0 +1,14 @@
+{
+  "name": "translate",
+  "version": "1.0.0",
+  "description": "Translation management system with keys, versions, memory, and audit",
+  "main": "index.js",
+  "scripts": {
+    "init-indexes": "node scripts/init-indexes.js",
+    "seed": "python scripts/seed.py"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "mongoose": "^8.0.0"
+  }
+}

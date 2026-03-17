@@ -1,0 +1,20 @@
+{
+  "name": "translate-ui",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "parcel index.html --port 3000",
+    "build": "parcel build index.html",
+    "preview": "npx serve -s dist"
+  },
+  "dependencies": {
+    "lucide-react": "^0.577.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.20.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
